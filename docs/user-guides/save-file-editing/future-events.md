@@ -47,10 +47,12 @@ If you are unsure on how a future event would look like for your need, try to fi
 
 "event_type" can be...
 
-- `"misc"`: Could be events like murder 
-- `"death"`: Any event that causes a death to trigger. Includes extinction events
+- `"misc"`: Could be events like murder reveals
+- `"death"`: Any event that causes a death to trigger. Includes murders
 - `"injury"`: Any event that causes an injury to trigger
 - `"new_cat"`: Any event that generates a new cat
+
+Unsure where to find events? Resources > lang > en > events in your game folder
 
 "pool" can include...
 
@@ -63,7 +65,7 @@ If you are unsure on how a future event would look like for your need, try to fi
 
 One parameter must be utilized (commonly "sub_type"), but you can use more than one if your heart desires.
 
-`"moon_delay"` can be anything, but if you want it to happen on the next moon, change it to 1. 
+`"moon_delay"` can be anything, but if you want it to happen on the next moon, change it to 1. Nothing happens? Try to set it to 2.
 
 `"involved_cats"` are the cats IDs you want to be involved with the future event, along with their role.
 
@@ -81,7 +83,11 @@ Forcing a new cat event...
     {
         "parent_event": "gen_new_cat_adoption_anylitter1",
         "event_type": "new_cat",
-        "pool": {},
+        "pool": {
+            "event_id": [
+                "gen_new_cat_adoption_anylitter1"
+            ]
+        },
         "moon_delay": 8,
         "involved_cats": {
             "m_c": "13"
@@ -119,7 +125,7 @@ Forcing a murder...
 [
     {
         "parent_event": "bch_death_murder_cliffdrop1",
-        "event_type": "misc",
+        "event_type": "death",
         "pool": {
             "sub_type": [
                 "murder"
@@ -135,7 +141,7 @@ Forcing a murder...
 ```
 
 !!! Tip
-     (in my play testing) "m_c" is usually the victim and "r_c" is usually the murderer
+     (in my play testing) "m_c" is usually the victim and "r_c" is usually the murderer. This could not always be the case.
 
 Forcing a murder reveal...
 
@@ -171,7 +177,11 @@ Forcing an injury...
     {
         "parent_event": "gen_injury_clawwound_anymultiagemultistatusnotfightermultitraitothercatleader1",
         "event_type": "injury",
-        "pool": {},
+        "pool": {
+            "exclude_id": [
+                "gen_injury_medmessup1"
+            ]
+        },
         "moon_delay": 2,
         "involved_cats": {
             "m_c": "15"

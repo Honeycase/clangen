@@ -261,7 +261,7 @@ This holds all the other clans information necessary for them to function in the
 
 **"name"**: The Prefix of the other clan. -clan is hardcoded
 
-**"relations"**: The relationship between the player clan and other clan. 0 to 20 -- lower number = worse relations
+**"relations"**: The relationship between the player clan and other clan. 0 to 30 -- lower number = worse relations
 
 * Above or equal to 17 is an ally, above 7 and under 17 is neutral, and under 7 is hostile.
 
@@ -336,20 +336,20 @@ Once all those are calculated, then they find the mean of all of those numbers t
 
 Facets are formatted as [aggression, sociability, lawfulness, stability]. Each number is separated from each other.
 
-If we are calculating the leaders influence, we'd multiply all four numbers by 3. "3,2,8,10" > [3*3], [2*3], [8*3], [10*3] > "9,6,24,30"
+If we are calculating the leaders influence, we'd multiply all four numbers by 3. "3,2,8,10" > [3x3], [2x3], [8x3], [10x3] > "9,6,24,30"
 
-Same with deputy. We'd multiply all four numbers by 2. "1,2,9,5" > [1*2], [2*2], [9*2], [5*2] > "2,4,18,10"
+Same with deputy. We'd multiply all four numbers by 2. "1,2,9,5" > [1x2], [2x2], [9x2], [5x2] > "2,4,18,10"
 
 Let's say we only have one medicine cat. We wouldn't do anything with their facets (use them as is). If we have multiple, we'll calculate the median between all of them. 
 
 Aggression: 1 1 8 14 = 1 + 8 = 9/2 = 4.5
-... and so forth with the rest of them
+... and so forth with the rest of the facet categories
 
 You'll do the same for other clan cats within the player clan. Calculate their median.
 
 With the total numbers, calculate the mean:
 
 Aggression [leader: 9] + [deputy: 2] + [medicine cats: 4.5] + [clan_cats: 9] = 24.5/4 = 6.1 (we'll round to 6)
-... and so forth with the rest of them
+... and so forth with the rest of the facet categories
 
 If you want to change the temperament of your clan, you will need to change the facets and calculate them to make sure they fit the vision that you have. Sometimes, just changing the leader, deputy, and medicine cats is enough of a change but other times, you'll have to go further.

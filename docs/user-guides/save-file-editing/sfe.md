@@ -5,7 +5,7 @@
 "Save file editing" is the modification of ClanGen's save files. This can range from something as simple as changing the appearance of a cat to inserting a future event.
 
 !!! warning
-     Save file editing, while easily accessible and widely used by ClanGen's community, is not officially supported by the ClanGen team. Do not report bugs or strange behavior experienced on edited saves. Reproduce on an unedited save first.
+     Save file editing, while easily accessible and widely used by ClanGen's community, is not officially supported by the ClanGen team. They do not accept bug reports involving edited clans! Make sure to replicate any bugs on unedited files.
 
 <div class="grid cards" markdown>
 

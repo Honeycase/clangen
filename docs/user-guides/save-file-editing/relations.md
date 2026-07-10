@@ -23,7 +23,7 @@ Relation values can now go from -100 to 0 to 100. Excluding romance, which is 0 
 
 Allowing relationships to go negative allows the developers to sort of squash some old relationship values together (dislike, jealousy, admiration).
 
-- RelTier in [enums.py](https://github.com/ClanGenOfficial/clangen/blob/development/scripts/cat_relations/enums.py) has all the values by name. The values change every 20 points of relation.
+- RelTier in [enums.py](https://github.com/ClanGenOfficial/clangen/blob/development/scripts/cat_relations/enums.py) has all the values by name
 
 | Code  | Description  |
 |---|---|

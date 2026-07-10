@@ -29,7 +29,7 @@ Some parts of this section might need you to read expanded explanation because I
 |  `"status": {[]},`  |  The standing a group status of a cat |  Please refer to expanded explanation for full details  |
 |  `"dark_forest_affinity": 0`  |  The cat's affinity towards the dark forest. -# = less likely, +# = more likely |  Influences whether the cat goes to the DF when they die  |
 |  `"starclan_affinity": 0`  |  The cat's affinity towards starclan. -# = less likely, +# = more likely |  Influences whether the cat goes to starclan when they die |
-| ` "backstory": "clanborn",`  |  Cat's backstory  |  Options: [Backstories documentation](https://ClanGen.io/docs/dev/writing/reference/tag-lists/#backstories)  |
+| ` "backstory": "clanborn",`  |  Cat's backstory  |  Options: [Backstories documentation](https://github.com/ClanGenOfficial/clangen/blob/release_0.13.0/resources/lang/en/cat/backstories.en.json)  |
 |  `"moons": 20, ` |  Age of the cat in moons  |  Age Ranges: [age & status](https://ClanGen.io/docs/dev/writing/reference/tag-lists/#age-and-status)  |
 | ` "trait": "sneaky", ` |  Cat's trait  |  Options: [trait & skills](https://ClanGen.io/docs/dev/writing/reference/tag-lists/#traits-and-skills)  |
 | ` "facets": "0,5,10,14", ` |  Facets determine what trait the cat has. null the line to regenerate `"facets": null,`  |  Ranges: [trait_ranges.json](https://github.com/ClanGenOfficial/ClanGen/blob/development/resources/dicts/traits/trait_ranges.json)  |
@@ -208,7 +208,7 @@ Affinity can either be a negative or positive number. Negative means the cat wou
 
 `"backstory": "abandoned4",`
 
-Refer to [backstories documentation](https://ClanGen.io/docs/dev/writing/reference/tag-lists/#backstories) for all the available backstories!
+Refer to [backstories documentation](https://github.com/ClanGenOfficial/clangen/blob/release_0.13.0/resources/lang/en/cat/backstories.en.json) for all the available backstories!
 
 * Cats outside the clan and dead outsiders have hardcoded backstories displayed no matter what is put here
 
@@ -708,7 +708,7 @@ The change:
             ]
 ```
 
-Now, we'll make them a warrior for group "5". This requires changing both "group_history" and "standing_history". You'll basically copy what's already there, then edit to your desired outcome.
+Now, we'll make them a warrior for group "5". This requires changing "group_history". You'll basically copy what's already there, then edit to your desired outcome.
 
 The change:
 ```json
@@ -737,17 +737,12 @@ The change:
                         "known"
                     ],
                     "near": true
-                },
-                {
-                    "group": "5",
-                    "standing": [
-                        "member"
-                    ],
-                    "near": true
                 }
             ]
         },
 ```
+
+Note that you do not need a "group": "5" standing_history for other clan cats.
 
 ## Reviving a Cat
 
@@ -1095,3 +1090,36 @@ After removing the `"group": null` section and `"lost"`:
 
 If you're trying to manually make a cat lost, you'll just do the opposite. Add a `"group": null,` section in `"group_history"` and the `"lost"` value in your `"group": "1"` for `"standing_history"`.
 
+## Instructor (afterlife guide)
+
+If you're searching to make an afterlife guide but isn't too sure how to code their status, follow the below steps.
+
+The instructor isn't technically part of the clan, so their "group_history" will be either "2" (starclan) or "4" (darkforest). A guide cannot be part of the unknown residence.
+
+"standing_history" will simply be "known" to "group": "1"
+
+Example:
+
+```json
+        "status": {
+            "group_history": [
+                {
+                    "group": "2",
+                    "rank": "apprentice",
+                    "moons_as": 73
+                }
+            ],
+            "standing_history": [
+                {
+                    "group": "1",
+                    "standing": [
+                        "known"
+                    ],
+                    "near": true
+                }
+            ]
+        },
+```
+
+!!! tip
+     You will also have to change their backstory to be one of the available guide backstories, and add their ID to "instructor" within the clan.json
