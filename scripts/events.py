@@ -1259,6 +1259,7 @@ def perform_ceremonies(cat):
         if not game.clan.leader or not game.clan.leader.status.alive_in_player_clan:
             game.clan.leader_lives = 9
             ceremony(cat, CatRank.LEADER)
+            cat.generate_lead_ceremony()
             game.clan.deputy = None
             game.clan.leader = cat
 
@@ -1496,7 +1497,6 @@ def _is_suitable_medcat_app(cat) -> bool:
         "fierce",
         "rebellious",
         "troublesome",
-        "sneaky",
         "vengeful",
     ]:
         chance = chance * 2
@@ -1911,11 +1911,13 @@ def handle_outside_EX(cat):
             return
 
         if cat.age == CatAge.ADOLESCENT:
-            ran = constants.CONFIG["outside_ex"]["base_adolescent_timeskip_ex"]
+            ran = constants.CONFIG["outsiders"]["outside_ex"][
+                "base_adolescent_timeskip_ex"
+            ]
         elif cat.age == CatAge.SENIOR:
-            ran = constants.CONFIG["outside_ex"]["base_senior_timeskip_ex"]
+            ran = constants.CONFIG["outsiders"]["outside_ex"]["base_senior_timeskip_ex"]
         else:
-            ran = constants.CONFIG["outside_ex"]["base_adult_timeskip_ex"]
+            ran = constants.CONFIG["outsiders"]["outside_ex"]["base_adult_timeskip_ex"]
 
         role_modifier = 1
         if cat.status.social == CatSocial.KITTYPET:
