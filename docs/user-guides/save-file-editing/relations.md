@@ -37,7 +37,7 @@ Allowing relationships to go negative allows the developers to sort of squash so
 |  "comfort": 0, | The discomfort-comfort "cat_from_id" feels toward "cat_to_id" |
 |  "trust": 0, | The fear-trust "cat_from_id" feels toward "cat_to_id" |
 |  "log": [], | A log of all relation events the cats had together. Logs can be custom texts |
-|  "no_longer_neutral": [] | "no_longer_neutral" prevents the cats from being neutral in a value once they surpass a certain point. It'll then "skip" neutral status (-6 - 6) and go to the next tier in the relation value |
+|  "no_longer_neutral": [] | "no_longer_neutral" prevents the cats from being neutral in a value once they surpass a certain point. It'll then "skip" neutral status (-6 -> 6) and go to the next tier in the relation value |
 
 ---
 

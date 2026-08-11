@@ -72,6 +72,7 @@ nav:
       - user-guides/save-file-editing/conditions.md
       - user-guides/save-file-editing/relations.md
       - user-guides/save-file-editing/future-events.md
+      - user-guides/save-file-editing/development.md
     - Tech Help:
       - user-guides/tech-help/installing-uv.md
       - user-guides/tech-help/backups.md
